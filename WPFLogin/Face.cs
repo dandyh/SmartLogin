@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 namespace WPFLogin
 {
     /// <summary>
-    /// Face view model
+    /// Face view model Dandy Handoko
     /// </summary>
     public class Face : INotifyPropertyChanged
     {
