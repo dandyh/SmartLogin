@@ -5,23 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFLogin"
         mc:Ignorable="d"
-        Title="User Registration" Height="501.275" Width="343.556">
-    <Grid Background="#242e38" Margin="0,0,0,-31">
-        <Grid Background="White" Margin="10">
+        Title="User Registration" Height="520.275" Width="348.556">
+    <Grid Background="#242e38" Margin="0,0,2,-31">
+        <Grid Background="White" Margin="20,10,26,44">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="89*"/>
+                <ColumnDefinition Width="54*"/>
+            </Grid.ColumnDefinitions>
 
 
-            <Grid HorizontalAlignment="Left" Height="166" Margin="20,49,0,0" VerticalAlignment="Top" Width="287"/>
-            <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="20,316,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="251" GotFocus="txtUsername_GotFocus"/>
-            <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="20,344,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="251" GotFocus="txtName_GotFocus"/>
-            <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="20,372,0,0" VerticalAlignment="Top" Width="251" GotFocus="txtPass_GotFocus" Password="xxxxxxx"/>
-            <Image x:Name="image1" HorizontalAlignment="Left" Margin="20,8,0,221" Width="251"/>
+            <Grid HorizontalAlignment="Left" Height="166" Margin="20,49,-21,0" VerticalAlignment="Top" Width="287" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="20,316,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="251" GotFocus="txtUsername_GotFocus" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="20,344,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="251" GotFocus="txtName_GotFocus" Grid.ColumnSpan="2"/>
+            <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="20,372,0,0" VerticalAlignment="Top" Width="251" GotFocus="txtPass_GotFocus" Password="xxxxxxx" Grid.ColumnSpan="2"/>
+            <Image x:Name="image1" HorizontalAlignment="Left" Margin="20,8,0,221" Width="251" Grid.ColumnSpan="2"/>
             <Label x:Name="lblGender" Content="" HorizontalAlignment="Left" Margin="20,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.137,0.205" Height="26"/>
             <Label x:Name="lblAge" Content="" HorizontalAlignment="Left" Margin="151,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.739" Height="26"/>
-            <Button x:Name="btnCapture" Content="Capture" Background="#1cb3bc" HorizontalAlignment="Left" Margin="20,257,0,0" VerticalAlignment="Top" Width="251" Click="btnCapture_Click"/>
+            <Button x:Name="btnCapture" Content="Capture" Background="#1cb3bc" HorizontalAlignment="Left" Margin="20,257,0,0" VerticalAlignment="Top" Width="251" Click="btnCapture_Click" Grid.ColumnSpan="2"/>
 
-            <Button x:Name="btnRedo" Content="Redo" Background="Gray" HorizontalAlignment="Left" Margin="20,282,0,0" VerticalAlignment="Top" Width="251" Click="btnRedo_Click"/>
-            <Button x:Name="btnRegistration" Content="Register" Background="#1cb3bc" HorizontalAlignment="Left" Margin="20,400,0,0" VerticalAlignment="Top" Width="251" Click="btnRegistration_Click"/>
-            <Button x:Name="btnBack" Content="Back" Background="Red" HorizontalAlignment="Left" Margin="20,428,0,0" VerticalAlignment="Top" Width="251" Click="btnBack_Click"/>
+            <Button x:Name="btnRedo" Content="Redo" Background="Gray" HorizontalAlignment="Left" Margin="20,282,0,0" VerticalAlignment="Top" Width="251" Click="btnRedo_Click" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnRegistration" Content="Register" Background="#1cb3bc" HorizontalAlignment="Left" Margin="20,400,0,0" VerticalAlignment="Top" Width="251" Click="btnRegistration_Click" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnBack" Content="Back" Background="Red" HorizontalAlignment="Left" Margin="20,428,0,0" VerticalAlignment="Top" Width="251" Click="btnBack_Click" Grid.ColumnSpan="2"/>
 
         </Grid>
     </Grid>
