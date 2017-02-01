@@ -5,7 +5,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 using System.Configuration;
-
+//Dandy Handoko
 namespace WPFLogin
 {
     //Design by Pongsakorn Poosankam
