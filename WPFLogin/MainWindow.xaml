@@ -1,0 +1,23 @@
+﻿<Window x:Class="WPFLogin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFLogin"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="343.556">
+    <Grid Background="#242e38">
+        <Grid Background="White" Margin="10,47,10,57">
+            
+            
+          <Grid HorizontalAlignment="Left" Height="166" Margin="20,49,0,0" VerticalAlignment="Top" Width="287"/>
+            <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="28,68,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="251" GotFocus="TextBox_GotFocus"/>
+            <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="28,96,0,0" VerticalAlignment="Top" Width="251" GotFocus="txtPass_GotFocus" Password="xxxxxxx"/>
+            
+            <Button x:Name="btnNormalLogin" Content="Login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,130,0,0" VerticalAlignment="Top" Width="251" Click="btnNormalLogin_Click"/>
+            <Button x:Name="btnLogin" Content="Face recognition login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,155,0,0" VerticalAlignment="Top" Width="251" Click="btnFaceLogin_Click"/>
+            <Button x:Name="btnRegistration" Content="Registration" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,180,0,0" VerticalAlignment="Top" Width="251" Click="btnRegistration_Click"/>
+
+        </Grid>
+    </Grid>
+</Window>
