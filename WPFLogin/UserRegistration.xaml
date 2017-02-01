@@ -19,9 +19,9 @@
             <Label x:Name="lblAge" Content="" HorizontalAlignment="Left" Margin="151,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.739" Height="26"/>
             <Button x:Name="btnCapture" Content="Capture" Background="#1cb3bc" HorizontalAlignment="Left" Margin="20,257,0,0" VerticalAlignment="Top" Width="251" Click="btnCapture_Click"/>
 
-            <Button x:Name="btnRedo" Content="Redo" Background="Red" HorizontalAlignment="Left" Margin="20,282,0,0" VerticalAlignment="Top" Width="251" Click="btnRedo_Click"/>
+            <Button x:Name="btnRedo" Content="Redo" Background="Gray" HorizontalAlignment="Left" Margin="20,282,0,0" VerticalAlignment="Top" Width="251" Click="btnRedo_Click"/>
             <Button x:Name="btnRegistration" Content="Register" Background="#1cb3bc" HorizontalAlignment="Left" Margin="20,400,0,0" VerticalAlignment="Top" Width="251" Click="btnRegistration_Click"/>
-            <Button x:Name="btnBack" Content="Back" Background="#1cb3bc" HorizontalAlignment="Left" Margin="20,428,0,0" VerticalAlignment="Top" Width="251" Click="btnBack_Click"/>
+            <Button x:Name="btnBack" Content="Back" Background="Red" HorizontalAlignment="Left" Margin="20,428,0,0" VerticalAlignment="Top" Width="251" Click="btnBack_Click"/>
 
         </Grid>
     </Grid>

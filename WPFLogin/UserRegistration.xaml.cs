@@ -27,6 +27,7 @@ namespace WPFLogin
         WebCam webcam;
         UserTableDataContext db = new UserTableDataContext();
         User regUser = new User();
+        string tempfilename;
         public UserRegistration()
         {
             InitializeComponent();
@@ -87,10 +88,10 @@ namespace WPFLogin
         private ObservableCollection<Face> detectedFaces = new ObservableCollection<Face>();
         private async void btnCapture_Click(object sender, RoutedEventArgs e)
         {
-            Helper.SaveTempImageCapture((BitmapSource)image1.Source);
+            tempfilename = Helper.SaveTempImageCapture((BitmapSource)image1.Source);
             webcam.Stop();
-            var imageInfo = UIHelper.GetImageInfoForRendering(Helper.tempPath);
-            using (var fileStream = File.OpenRead(Helper.tempPath))
+            var imageInfo = UIHelper.GetImageInfoForRendering(tempfilename);
+            using (var fileStream = File.OpenRead(tempfilename))
             {
                 try
                 {
@@ -99,7 +100,7 @@ namespace WPFLogin
                     var faces = await faceServiceClient.DetectAsync(fileStream, true, true, new FaceAttributeType[] { FaceAttributeType.Gender, FaceAttributeType.Age, FaceAttributeType.Smile, FaceAttributeType.Glasses, FaceAttributeType.HeadPose, FaceAttributeType.FacialHair });
 
                     //Render rectangle in the image
-                    Uri fileUri = new Uri(Helper.tempPath);
+                    Uri fileUri = new Uri(tempfilename);
                     BitmapImage bitmapSource = new BitmapImage();
                     bitmapSource.BeginInit();
                     bitmapSource.CacheOption = BitmapCacheOption.None;
@@ -118,7 +119,7 @@ namespace WPFLogin
                         {
                             detectedFaces.Add(new Face()
                             {
-                                ImagePath = Helper.tempPath,
+                                ImagePath = tempfilename,
                                 Left = face.FaceRectangle.Left,
                                 Top = face.FaceRectangle.Top,
                                 Width = face.FaceRectangle.Width,

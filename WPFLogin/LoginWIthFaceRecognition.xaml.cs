@@ -32,7 +32,7 @@ namespace WPFLogin
     public partial class LoginWIthFaceRecognition : Window
     {
         WebCam webcam;
-        
+        string tempfilename;
         public string username { get; set; }
 
         public void redo()
@@ -58,7 +58,7 @@ namespace WPFLogin
             image2.Source = image1.Source;
             image1.Visibility = Visibility.Hidden;
 
-            Helper.SaveTempImageCapture((BitmapSource)image2.Source);
+            tempfilename = Helper.SaveTempImageCapture((BitmapSource)image2.Source);
             webcam.Stop();
         }
 
@@ -80,7 +80,7 @@ namespace WPFLogin
             if(usr != null)
             {
                 FaceAPIHelper tempImage = new FaceAPIHelper();
-                string result = await tempImage.UploadOneFace(Helper.tempPath);
+                string result = await tempImage.UploadOneFace(tempfilename);
                 if (String.IsNullOrEmpty(result))
                 {
                     tempFaceCollection = tempImage.faceResultCollection;
@@ -126,5 +126,12 @@ namespace WPFLogin
                         
         }
 
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            webcam.Stop();
+            this.Close();
+        }
     }
 }

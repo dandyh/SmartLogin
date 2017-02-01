@@ -50,14 +50,15 @@ namespace WPFLogin
 
         }
 
-        public static void SaveTempImageCapture(BitmapSource bitmap)
+        public static string SaveTempImageCapture(BitmapSource bitmap)
         {
             JpegBitmapEncoder encoder = new JpegBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create(bitmap));
             encoder.QualityLevel = 100;
 
             // Save Image
-            string filename = tempPath;
+            Guid id = Guid.NewGuid();
+            string filename = tempPath + id.ToString() + ".jpg";
 
             if (File.Exists(filename))
                 File.Delete(filename);
@@ -66,8 +67,9 @@ namespace WPFLogin
             {
                 encoder.Save(fstream);
                 fstream.Close();
-            }                
-            
+            }
+
+            return filename;
             
         }
 
