@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="343.556">
     <Grid Background="#242e38">
-        <Grid Background="White" Margin="10,47,10,57">
+        <Grid Background="White" Margin="10,47,10,21">
             
             
           <Grid HorizontalAlignment="Left" Height="166" Margin="20,49,0,0" VerticalAlignment="Top" Width="287"/>
@@ -16,8 +16,10 @@
             
             <Button x:Name="btnNormalLogin" Content="Login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,130,0,0" VerticalAlignment="Top" Width="251" Click="btnNormalLogin_Click"/>
             <Button x:Name="btnLogin" Content="Face recognition login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,155,0,0" VerticalAlignment="Top" Width="251" Click="btnFaceLogin_Click"/>
-            <Button x:Name="btnRegistration" Content="Registration" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,180,0,0" VerticalAlignment="Top" Width="251" Click="btnRegistration_Click"/>
+            <Button x:Name="btnRegistration" Content="Registration" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,205,0,0" VerticalAlignment="Top" Width="251" Click="btnRegistration_Click"/>
 
+        
+        <Button x:Name="btnSpeakerRecognitionLogin" Content="Speaker recognition login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,180,0,0" VerticalAlignment="Top" Width="251" Click="btnSpeakerRecognitionLogin_Click"/>
         </Grid>
     </Grid>
 </Window>

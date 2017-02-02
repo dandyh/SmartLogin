@@ -105,9 +105,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\FaceAPIHelper.cs" />
+    <Compile Include="isolatedStorageHelper.cs" />
     <Compile Include="UIHelper.cs" />
     <Compile Include="UserRegistration.xaml.cs">
       <DependentUpon>UserRegistration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserRegistrationAudio.xaml.cs">
+      <DependentUpon>UserRegistrationAudio.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserTable.designer.cs">
       <AutoGen>True</AutoGen>
@@ -137,6 +141,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserRegistrationAudio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

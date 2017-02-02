@@ -79,5 +79,18 @@ namespace WPFLogin
             ss.Show();
             this.Close();
         }
+
+        private void btnTest_Click(object sender, RoutedEventArgs e)
+        {
+            UserRegistrationAudio ss = new UserRegistrationAudio("dandy");
+            ss.Show();
+            this.Close();
+        }
+        public int counter;
+
+        private void btnSpeakerRecognitionLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

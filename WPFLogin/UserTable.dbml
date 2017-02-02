@@ -8,6 +8,7 @@
       <Column Name="photofile" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="age" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="speakerguid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
