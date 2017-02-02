@@ -63,13 +63,13 @@ namespace WPFLogin
             if (String.Equals(txtUsername.Text, "Username") || String.Equals(txtUsername.Text.Trim(), ""))
             {
                 MessageBox.Show("Please enter your username!", "Error", MessageBoxButton.OK);
+                return;
             }
-            else
-            {
-                LoginWIthFaceRecognition ss = new LoginWIthFaceRecognition(txtUsername.Text);
-                ss.Show();
-                this.Close();
-            }
+            
+            LoginWIthFaceRecognition ss = new LoginWIthFaceRecognition(txtUsername.Text);
+            ss.Show();
+            this.Close();
+            
 
         }
 
@@ -82,7 +82,7 @@ namespace WPFLogin
 
         private void btnTest_Click(object sender, RoutedEventArgs e)
         {
-            UserRegistrationAudio ss = new UserRegistrationAudio("dandy");
+            UserRegistrationAudio ss = new UserRegistrationAudio(txtUsername.Text);
             ss.Show();
             this.Close();
         }
@@ -90,7 +90,14 @@ namespace WPFLogin
 
         private void btnSpeakerRecognitionLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            if (String.Equals(txtUsername.Text, "Username") || String.Equals(txtUsername.Text.Trim(), ""))
+            {
+                MessageBox.Show("Please enter your username!", "Error", MessageBoxButton.OK);
+                return;
+            }
+            LoginWithSpeakerRecognition ss = new LoginWithSpeakerRecognition(txtUsername.Text);
+            ss.Show();
+            this.Close();
         }
     }
 }

@@ -94,6 +94,8 @@ namespace WPFLogin
 		
 		private string _speakerguid;
 		
+		private string _speakerphrase;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -112,6 +114,8 @@ namespace WPFLogin
     partial void OngenderChanged();
     partial void OnspeakerguidChanging(string value);
     partial void OnspeakerguidChanged();
+    partial void OnspeakerphraseChanging(string value);
+    partial void OnspeakerphraseChanged();
     #endregion
 		
 		public User()
@@ -255,6 +259,26 @@ namespace WPFLogin
 					this._speakerguid = value;
 					this.SendPropertyChanged("speakerguid");
 					this.OnspeakerguidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_speakerphrase", DbType="VarChar(MAX)")]
+		public string speakerphrase
+		{
+			get
+			{
+				return this._speakerphrase;
+			}
+			set
+			{
+				if ((this._speakerphrase != value))
+				{
+					this.OnspeakerphraseChanging(value);
+					this.SendPropertyChanging();
+					this._speakerphrase = value;
+					this.SendPropertyChanged("speakerphrase");
+					this.OnspeakerphraseChanged();
 				}
 			}
 		}

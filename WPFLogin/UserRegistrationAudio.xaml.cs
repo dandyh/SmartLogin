@@ -4,22 +4,13 @@ using Microsoft.ProjectOxford.SpeakerRecognition.Contract.Verification;
 using NAudio.Utils;
 using NAudio.Wave;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WPFLogin
 {
@@ -175,6 +166,7 @@ namespace WPFLogin
                     //MessageBox.Show("You have now completed the minimum number of enrollments. You can press finish or add more enrollments", "Speaker enrolled");
                     MessageBox.Show("Registration completed!", "Speaker enrolled");
                     user.speakerguid = _speakerId.ToString();
+                    user.speakerphrase = txtPhraseText.Text;
                     dataContext.SubmitChanges();
                     MainWindow mw = new MainWindow();
                     mw.Show();

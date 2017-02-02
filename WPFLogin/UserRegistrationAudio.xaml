@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFLogin"
         mc:Ignorable="d"
-         Title="User Registration " Height="449.007" Width="351.333">
+         Title="User Registration " Height="460" Width="351.333">
     <Grid Background="#242e38" Margin="0,0,2,4">
         <Grid Background="White" Margin="20,26,26,10">
             <Grid.ColumnDefinitions>
@@ -28,9 +28,9 @@
             <!--<Button x:Name="btnRecord" Content="Record" Background="#1cb3bc" HorizontalAlignment="Left" Margin="11,249,0,0" VerticalAlignment="Top" Width="271" Click="btnRecord_Click" Grid.Row="1" Grid.ColumnSpan="2"/>
             <Button x:Name="btnStop" Content="Stop Record" Background="#1cb3bc" HorizontalAlignment="Left" Margin="0,249,0,0" VerticalAlignment="Top" Width="137" Click="btnStop_Click" Grid.Row="1" Grid.Column="1"/>-->
             <RepeatButton x:Name="btnRecord" Content="Hold to record" Background="#1cb3bc" HorizontalAlignment="Left" Margin="11,249,0,0" VerticalAlignment="Top" Width="271" PreviewMouseDown="btnRecord_Click"  PreviewMouseUp="btnStop_Click" Grid.Row="1" Grid.ColumnSpan="2"/>
-            <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" Margin="10,4,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="272" Height="23" Grid.RowSpan="2"/>
+            <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" Margin="10,3,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="272" Height="27"/>
             <ListBox x:Name="phrasesListbox" HorizontalAlignment="Left" Height="127" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="273" Grid.ColumnSpan="2"/>
-            <Button x:Name="btnReset" Content="Reset" Background="Red" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="272" Click="btnReset_Click" Grid.ColumnSpan="2" Grid.Row="3"/>
+            <Button x:Name="btnReset" Content="Reset" Background="Red" HorizontalAlignment="Left" Margin="10,41,0,-5" VerticalAlignment="Top" Width="272" Click="btnReset_Click" Grid.ColumnSpan="2" Grid.Row="3"/>
             <Label x:Name="label1" Content="List of available phrases!" HorizontalAlignment="Left" Margin="11,20,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="260"/>
         </Grid>
     </Grid>
