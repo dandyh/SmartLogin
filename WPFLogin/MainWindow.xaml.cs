@@ -51,9 +51,17 @@ namespace WPFLogin
             }
             else
             {
-                LoginWIthFaceRecognition ss = new LoginWIthFaceRecognition(txtUsername.Text);
-                ss.Show();
-                this.Close();
+                //Login
+                UserTableDataContext dataContext = new UserTableDataContext();
+                var usr = dataContext.Users.SingleOrDefault(x => x.username == txtUsername.Text && x.password == txtPassword.Password);
+                if(usr != null)
+                {
+                    MessageBox.Show("Login successful", "Login successful", MessageBoxButton.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Login Failed", "Login Failed", MessageBoxButton.OK);
+                }
             }
 
         }

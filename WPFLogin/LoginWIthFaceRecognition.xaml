@@ -5,19 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFLogin"
         mc:Ignorable="d"
-        Title="LoginWIthFaceRecognition" Height="500" Width="330.661">
+        Title="LoginWIthFaceRecognition" Height="450" Width="330.661">
     <Grid>
 
         <Grid Background="#242e38">
             <Grid Background="White" Margin="20,20,20,20">
                 <Image x:Name="image1" HorizontalAlignment="Left" Height="174"  VerticalAlignment="Top" Width="209" Margin="36,109,0,0" />
                 <Image x:Name="image2" HorizontalAlignment="Left" Height="174"  VerticalAlignment="Top" Width="209" Margin="36,109,0,0"/>
-                <Button x:Name="btnCapture" Content="Capture" HorizontalAlignment="Left" Margin="36,301,0,0" VerticalAlignment="Top" Width="209" Background="#1cb3bc" Click="btnCapture_Click"/>
-                <Button x:Name="btnRedo" Content="Redo" HorizontalAlignment="Left" Margin="36,326,0,0" VerticalAlignment="Top" Width="209" Background="Gray" Click="btnRedo_Click"/>
-                <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="36,351,0,0" VerticalAlignment="Top" Width="106" Background="#1cb3bc" Click="btnLogin_Click"/>
+                <Button x:Name="btnCapture" Content="Capture and login" HorizontalAlignment="Left" Margin="36,301,0,0" VerticalAlignment="Top" Width="209" Background="#1cb3bc" Click="btnCapture_Click"/>
                 <Label x:Name="label1" Content="" Foreground="Black" HorizontalAlignment="Left" Margin="36,38,0,0" VerticalAlignment="Top" Width="209" Height="49" FontSize="20"/>
 
-                <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="142,351,0,0" VerticalAlignment="Top" Width="103" Background="#D32424" Click="btnBack_Click"/>
+                <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="36,326,0,0" VerticalAlignment="Top" Width="209" Background="#D32424" Click="btnBack_Click"/>
             </Grid>
         </Grid>
 

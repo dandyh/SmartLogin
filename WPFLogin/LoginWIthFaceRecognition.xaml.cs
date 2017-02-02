@@ -52,7 +52,7 @@ namespace WPFLogin
             webcam.Start();
         }
 
-        private void btnCapture_Click(object sender, RoutedEventArgs e)
+        private async void btnCapture_Click(object sender, RoutedEventArgs e)
         {
             image2.Visibility = Visibility.Visible;
             image2.Source = image1.Source;
@@ -60,24 +60,13 @@ namespace WPFLogin
 
             tempfilename = Helper.SaveTempImageCapture((BitmapSource)image2.Source);
             webcam.Stop();
-        }
 
-        private void btnRedo_Click(object sender, RoutedEventArgs e)
-        {
-            redo();
-        }
-
-        private ObservableCollection<Face> tempFaceCollection = new ObservableCollection<Face>();
-        private ObservableCollection<Face> databaseFaceCollection = new ObservableCollection<Face>();
-
-        private async void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-
+            //Login
             UserTableDataContext dataContext = new UserTableDataContext();
-            var usr = dataContext.Users.SingleOrDefault(x => x.username == this.username );
-                        
+            var usr = dataContext.Users.SingleOrDefault(x => x.username == this.username);
+
             ////label.Content = "Please wait...";
-            if(usr != null)
+            if (usr != null)
             {
                 FaceAPIHelper tempImage = new FaceAPIHelper();
                 string result = await tempImage.UploadOneFace(tempfilename);
@@ -105,26 +94,99 @@ namespace WPFLogin
                 else
                 {
                     MessageBox.Show(result, "Error", MessageBoxButton.OK);
+                    redo();
                     return;
                 }
 
-                //Verify
-                FaceAPIHelper verification = new FaceAPIHelper();
-                string res = await verification.Verify2Faces(tempFaceCollection, databaseFaceCollection);
-                MessageBox.Show(res, "Successful", MessageBoxButton.OK);
-                webcam.Stop();
+                //Verify                
+                string res = await realImage.Verify2Faces(tempFaceCollection, databaseFaceCollection);
+                if (res.ToLower().Contains("successful"))
+                {
+                    MessageBox.Show(res, "Successful", MessageBoxButton.OK);
+                    webcam.Stop();
+                }
+                else
+                {
+                    MessageBox.Show(res, "Error", MessageBoxButton.OK);
+                    redo();
+                    return;
+                }
+                
             }
             else
             {
-                MessageBox.Show("User not found", "Error", MessageBoxButton.OK);                
+                MessageBox.Show("User not found", "Error", MessageBoxButton.OK);
                 MainWindow mw = new MainWindow();
                 mw.Show();
                 webcam.Stop();
                 this.Close();
             }
+
+        }
+
+        private void btnRedo_Click(object sender, RoutedEventArgs e)
+        {
+            redo();
+        }
+
+        private ObservableCollection<Face> tempFaceCollection = new ObservableCollection<Face>();
+        private ObservableCollection<Face> databaseFaceCollection = new ObservableCollection<Face>();
+
+        //private async void btnLogin_Click(object sender, RoutedEventArgs e)
+        //{
+
+        //    UserTableDataContext dataContext = new UserTableDataContext();
+        //    var usr = dataContext.Users.SingleOrDefault(x => x.username == this.username );
+                        
+        //    ////label.Content = "Please wait...";
+        //    if(usr != null)
+        //    {
+        //        FaceAPIHelper tempImage = new FaceAPIHelper();
+        //        string result = await tempImage.UploadOneFace(tempfilename);
+        //        if (String.IsNullOrEmpty(result))
+        //        {
+        //            tempFaceCollection = tempImage.faceResultCollection;
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show(result, "Error", MessageBoxButton.OK);
+        //            redo();
+        //            return;
+        //        }
+
+
+        //        //Get comparison face for verify
+        //        //CHANGE HERE TO BE DYNAMIC
+        //        string imagepath = usr.photofile; // dt.Rows[0][0].ToString();
+        //        FaceAPIHelper realImage = new FaceAPIHelper();
+        //        result = await realImage.UploadOneFace(imagepath);
+        //        if (String.IsNullOrEmpty(result))
+        //        {
+        //            databaseFaceCollection = realImage.faceResultCollection;
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show(result, "Error", MessageBoxButton.OK);
+        //            return;
+        //        }
+
+        //        //Verify
+        //        FaceAPIHelper verification = new FaceAPIHelper();
+        //        string res = await verification.Verify2Faces(tempFaceCollection, databaseFaceCollection);
+        //        MessageBox.Show(res, "Successful", MessageBoxButton.OK);
+        //        webcam.Stop();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("User not found", "Error", MessageBoxButton.OK);                
+        //        MainWindow mw = new MainWindow();
+        //        mw.Show();
+        //        webcam.Stop();
+        //        this.Close();
+        //    }
             
                         
-        }
+        //}
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
