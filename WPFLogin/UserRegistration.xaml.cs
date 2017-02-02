@@ -50,8 +50,8 @@ namespace WPFLogin
 
             db.Users.InsertOnSubmit(regUser);
             db.SubmitChanges();
-            MessageBox.Show("Registration successful!", "Successful", MessageBoxButton.OK);
-            MainWindow mw = new MainWindow();
+            MessageBox.Show("Registration successful, please record your voice for speaker recognition login!", "Successful", MessageBoxButton.OK);
+            UserRegistrationAudio mw = new UserRegistrationAudio(txtUsername.Text);
             mw.Show();
             this.Close();
 

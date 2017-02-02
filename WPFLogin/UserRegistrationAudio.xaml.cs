@@ -164,7 +164,7 @@ namespace WPFLogin
                 //Stopwatch sw = Stopwatch.StartNew();
                 Enrollment response = await _serviceClient.EnrollAsync(audioStream, _speakerId);
                 //sw.Stop();
-                lblStatus.Content = "Enrollment Done"; //+ sw.Elapsed;
+                lblStatus.Content = "Enrollment done, " + response.RemainingEnrollments.ToString() + " remaining(s)"; //+ sw.Elapsed;
                 txtRemainingEnrollment.Text = response.RemainingEnrollments.ToString();
 
 
@@ -172,11 +172,15 @@ namespace WPFLogin
 
                 if (response.RemainingEnrollments == 0)
                 {
-                    MessageBox.Show("You have now completed the minimum number of enrollments. You may perform verification or add more enrollments", "Speaker enrolled");
+                    //MessageBox.Show("You have now completed the minimum number of enrollments. You can press finish or add more enrollments", "Speaker enrolled");
+                    MessageBox.Show("Registration completed!", "Speaker enrolled");
                     user.speakerguid = _speakerId.ToString();
                     dataContext.SubmitChanges();
-
-                }                
+                    MainWindow mw = new MainWindow();
+                    mw.Show();
+                    this.Close();
+                }
+                btnReset.IsEnabled = true;
             }
             catch (EnrollmentException exception)
             {
