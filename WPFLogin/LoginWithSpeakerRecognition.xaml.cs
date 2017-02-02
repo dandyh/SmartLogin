@@ -128,16 +128,18 @@ namespace WPFLogin
             {
                 lblStatus.Content = "Verifying..";                
                 Verification response = await _serviceClient.VerifyAsync(audioStream, _speakerId);
-                lblStatus.Content = "Verification Done";
+                
                 //statusResTxt.Text = response.Result.ToString();
                 //confTxt.Text = response.Confidence.ToString();
                 if (response.Result == Result.Accept)
                 {
                     MessageBox.Show("Login successful, with confidence: " + response.Confidence.ToString(), "Successful", MessageBoxButton.OK);
+                    lblStatus.Content = "Verification successful";
                 }
                 else
                 {
                     MessageBox.Show("Login failed, with confidence: " + response.Confidence.ToString(), "Failed", MessageBoxButton.OK);
+                    lblStatus.Content = "Verification failed";
                 }
             }
             catch (VerificationException exception)
@@ -171,6 +173,13 @@ namespace WPFLogin
         {
             btnRecord.IsEnabled = true;
             _waveIn.StopRecording();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new MainWindow();
+            mw.Show();            
+            this.Close();
         }
     }
 }

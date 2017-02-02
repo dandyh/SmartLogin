@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFLogin"
         mc:Ignorable="d"
-        Title="Login with Speaker recognition" Height="270" Width="350">
+        Title="Login with Speaker recognition" Height="285" Width="350">
     <Grid>
 
         <Grid Background="#242e38">
@@ -16,6 +16,7 @@
                 <TextBox x:Name="txtPhraseText" HorizontalAlignment="Left" Height="20" Margin="10,95,0,0" TextWrapping="Wrap" Text="Verification Phrase" VerticalAlignment="Top" Width="273" IsEnabled="False"/>
                 <RepeatButton x:Name="btnRecord" Content="Hold to record and login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Width="271" PreviewMouseDown="btnRecord_Click"  PreviewMouseUp="btnStop_Click" />
                 <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="btnBack" Content="Back" Background="#D32424" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" Width="271" Click="btnBack_Click" />
             </Grid>
         </Grid>
 

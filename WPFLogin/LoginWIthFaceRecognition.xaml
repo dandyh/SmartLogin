@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFLogin"
         mc:Ignorable="d"
-        Title="LoginWIthFaceRecognition" Height="450" Width="330.661">
+        Title="LoginWIthFaceRecognition" Height="450" Width="332">
     <Grid>
 
         <Grid Background="#242e38">
             <Grid Background="White" Margin="20,20,20,20">
-                <Image x:Name="image1" HorizontalAlignment="Left" Height="174"  VerticalAlignment="Top" Width="209" Margin="36,109,0,0" />
-                <Image x:Name="image2" HorizontalAlignment="Left" Height="174"  VerticalAlignment="Top" Width="209" Margin="36,109,0,0"/>
-                <Button x:Name="btnCapture" Content="Capture and login" HorizontalAlignment="Left" Margin="36,301,0,0" VerticalAlignment="Top" Width="209" Background="#1cb3bc" Click="btnCapture_Click"/>
-                <Label x:Name="label1" Content="" Foreground="Black" HorizontalAlignment="Left" Margin="36,38,0,0" VerticalAlignment="Top" Width="209" Height="49" FontSize="20"/>
+                <Image x:Name="image1" HorizontalAlignment="Left" Height="204"  VerticalAlignment="Top" Width="263" Margin="10,79,10,0"/>
+                <Image x:Name="image2" HorizontalAlignment="Left" Height="204"  VerticalAlignment="Top" Width="263" Margin="10,79,10,0"/>
+                <Button x:Name="btnCapture" Content="Capture and login" HorizontalAlignment="Left" Margin="10,301,0,0" VerticalAlignment="Top" Width="255" Background="#1cb3bc" Click="btnCapture_Click"/>
+                <Label x:Name="label1" Content="" Foreground="Black" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="263" Height="49" FontSize="20"/>
 
-                <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="36,326,0,0" VerticalAlignment="Top" Width="209" Background="#D32424" Click="btnBack_Click"/>
+                <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="10,326,0,0" VerticalAlignment="Top" Width="255" Background="#D32424" Click="btnBack_Click"/>
             </Grid>
         </Grid>
 

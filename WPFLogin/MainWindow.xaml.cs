@@ -23,6 +23,8 @@ namespace WPFLogin
         public MainWindow()
         {
             InitializeComponent();
+            //For testing
+            txtUsername.Text = "dandy";
         }
 
         public void TextBox_GotFocus(object sender, RoutedEventArgs e)
