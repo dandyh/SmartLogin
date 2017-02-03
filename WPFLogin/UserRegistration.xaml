@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFLogin"
         mc:Ignorable="d"
-        Title="User Registration" Height="520.275" Width="348.556">
-    <Grid Background="#242e38" Margin="0,0,2,-31">
-        <Grid Background="White" Margin="20,10,26,44">
+        Title="User Registration" Height="548" Width="348.556">
+    <Grid Background="#242e38" Margin="0,0,2,0">
+        <Grid Background="White" Margin="20,10,26,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="89*"/>
                 <ColumnDefinition Width="54*"/>
@@ -19,13 +19,15 @@
             <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="20,344,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="251" GotFocus="txtName_GotFocus" Grid.ColumnSpan="2"/>
             <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="20,372,0,0" VerticalAlignment="Top" Width="251" GotFocus="txtPass_GotFocus" Password="xxxxxxx" Grid.ColumnSpan="2"/>
             <Image x:Name="image1" HorizontalAlignment="Left" Margin="20,8,0,221" Width="251" Grid.ColumnSpan="2"/>
-            <Label x:Name="lblGender" Content="" HorizontalAlignment="Left" Margin="20,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.137,0.205" Height="26"/>
-            <Label x:Name="lblAge" Content="" HorizontalAlignment="Left" Margin="151,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.739" Height="26"/>
+            <Label x:Name="lblGender" Content="" HorizontalAlignment="Left" Margin="20,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.137,0.205" Height="26"/>
+            <Label x:Name="lblAge" Content="" HorizontalAlignment="Left" Margin="5,232,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.641,1.04" Height="25" Width="78" Grid.Column="1"/>
             <Button x:Name="btnCapture" Content="Capture" Background="#1cb3bc" HorizontalAlignment="Left" Margin="20,257,0,0" VerticalAlignment="Top" Width="251" Click="btnCapture_Click" Grid.ColumnSpan="2"/>
 
             <Button x:Name="btnRedo" Content="Redo" Background="Gray" HorizontalAlignment="Left" Margin="20,282,0,0" VerticalAlignment="Top" Width="251" Click="btnRedo_Click" Grid.ColumnSpan="2"/>
-            <Button x:Name="btnRegistration" Content="Register" Background="#1cb3bc" HorizontalAlignment="Left" Margin="20,400,0,0" VerticalAlignment="Top" Width="251" Click="btnRegistration_Click" Grid.ColumnSpan="2"/>
-            <Button x:Name="btnBack" Content="Back" Background="Red" HorizontalAlignment="Left" Margin="20,428,0,0" VerticalAlignment="Top" Width="251" Click="btnBack_Click" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnRegistration" Content="Register" Background="#1cb3bc" HorizontalAlignment="Left" Margin="20,435,0,0" VerticalAlignment="Top" Width="251" Click="btnRegistration_Click" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnBack" Content="Back" Background="Red" HorizontalAlignment="Left" Margin="20,460,0,0" VerticalAlignment="Top" Width="251" Click="btnBack_Click" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtFamilyId" HorizontalAlignment="Left" Height="23" Margin="20,400,0,0" TextWrapping="Wrap" Text="FamilyId" VerticalAlignment="Top" Width="251" Grid.ColumnSpan="2" GotFocus="txtFamilyId_GotFocus"/>
+            <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="157,234,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25"/>
 
         </Grid>
     </Grid>

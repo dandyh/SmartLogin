@@ -42,10 +42,39 @@ namespace WPFLogin
                 MessageBox.Show("Username is already exist!", "Error", MessageBoxButton.OK);
                 return;
             }
-            regUser.username = txtUsername.Text;
-            regUser.name = txtName.Text;
-            regUser.password = txtPassword.Password;
+
+            string temp = "";
+            if (!String.IsNullOrEmpty((temp=validation(txtUsername.Text, "Username")))){
+                MessageBox.Show(temp, "Error", MessageBoxButton.OK); return;
+            }
+            if (!String.IsNullOrEmpty((temp = validation(txtName.Text, "Name"))))
+            {
+                MessageBox.Show(temp, "Error", MessageBoxButton.OK); return;
+            }
+            if (txtPassword.Password == "xxxxxxx")
+            {
+                txtPassword.Password = "";
+            }
+            if (!String.IsNullOrEmpty((temp = validation(txtPassword.Password, "Password"))))
+            {                
+                MessageBox.Show(temp, "Error", MessageBoxButton.OK); return;
+            }            
+            if (!String.IsNullOrEmpty((temp = validation(txtFamilyId.Text, "FamilyId"))))
+            {
+                MessageBox.Show(temp, "Error", MessageBoxButton.OK); return;
+            }
+            if (!String.IsNullOrEmpty((temp = validation(txtAge.Text, "Age"))))
+            {
+                MessageBox.Show(temp, "Error", MessageBoxButton.OK); return;
+            }
+
+
+            regUser.username = txtUsername.Text.Trim();
+            regUser.name = txtName.Text.Trim(); 
+            regUser.password = txtPassword.Password.Trim();
+            regUser.age = txtAge.Text.Trim();
             regUser.photofile = ConfigurationSettings.AppSettings.Get("photoslocation") + txtUsername.Text + ".jpg";
+            regUser.familyid = txtFamilyId.Text.Trim();
             Helper.SaveImageCapture((BitmapSource)image1.Source, regUser.photofile);
 
             db.Users.InsertOnSubmit(regUser);
@@ -83,6 +112,20 @@ namespace WPFLogin
                 txtName.Text = "";
             }
 
+        }
+
+        public string validation(string txt, string fieldname)
+        {
+            if (String.Equals(txt.Trim().ToLower(), fieldname.ToLower()))
+            {
+                return "Please enter " + fieldname + "!";
+            }
+
+            if (String.IsNullOrEmpty(txt.Trim()))
+            {
+                return "Please enter " + fieldname + "!";
+            }
+            return String.Empty;
         }
 
         private ObservableCollection<Face> detectedFaces = new ObservableCollection<Face>();
@@ -135,8 +178,8 @@ namespace WPFLogin
                             lblGender.Content = "Gender: " + face.FaceAttributes.Gender;
                             regUser.gender = face.FaceAttributes.Gender;
 
-                            lblAge.Content = string.Format("{0:#} years old", face.FaceAttributes.Age);
-                            regUser.age = string.Format("{0:#}", face.FaceAttributes.Age);
+                            txtAge.Text = string.Format("{0:#}", face.FaceAttributes.Age);
+                            lblAge.Content = "years old";                            
                             if (!String.Equals(face.FaceAttributes.Glasses.ToString(),"NoGlasses"))
                             {
                                 MessageBox.Show("Please dont wear your glasses! Thanks", "Error", MessageBoxButton.OK);
@@ -214,6 +257,14 @@ namespace WPFLogin
             mw.Show();
             webcam.Stop();
             this.Close();
+        }
+
+        private void txtFamilyId_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtFamilyId.Text.ToLower() == "familyid")
+            {
+                txtFamilyId.Text = "";
+            }
         }
     }
 }
