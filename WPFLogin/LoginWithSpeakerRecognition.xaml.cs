@@ -40,7 +40,7 @@ namespace WPFLogin
                 this.username = username;
                 label1.Content = "Hello " + username;
                 user = dataContext.Users.SingleOrDefault(x => x.username == this.username);
-                if (user == null)
+                if (user == null || user.speakerguid == null)
                 {
 
                     //Delay 2 seconds to check whether user exists or not
@@ -49,7 +49,7 @@ namespace WPFLogin
                     timer.Tick += (sender, args) =>
                     {
                         timer.Stop();
-                        MessageBox.Show("User not found", "Error", MessageBoxButton.OK);
+                        MessageBox.Show("User or Voice data is not found", "Error", MessageBoxButton.OK);
                         MainWindow mw = new MainWindow();
                         mw.Show();
                         this.Close();
