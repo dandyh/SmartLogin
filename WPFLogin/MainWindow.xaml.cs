@@ -59,6 +59,12 @@ namespace WPFLogin
                 if(usr != null)
                 {
                     MessageBox.Show("Login successful", "Login successful", MessageBoxButton.OK);
+
+
+                    MainMenu ss = new MainMenu(usr);
+                    ss.Show();
+                    this.Close();
+                    return;
                 }
                 else
                 {

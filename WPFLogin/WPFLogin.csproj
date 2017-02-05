@@ -132,6 +132,9 @@
     <Compile Include="LoginWithSpeakerRecognition.xaml.cs">
       <DependentUpon>LoginWithSpeakerRecognition.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UIHelper.cs" />
     <Compile Include="UserRegistration.xaml.cs">
       <DependentUpon>UserRegistration.xaml</DependentUpon>
@@ -150,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LoginWithSpeakerRecognition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
