@@ -5,21 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFLogin"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="343.556">
+        Title="MainWindow" Height="335.128" Width="329.676">
     <Grid Background="#242e38">
         <Grid Background="White" Margin="10,47,10,21">
-            
-            
-          <Grid HorizontalAlignment="Left" Height="166" Margin="20,49,0,0" VerticalAlignment="Top" Width="287"/>
-            <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="28,68,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="251" GotFocus="TextBox_GotFocus"/>
-            <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="28,96,0,0" VerticalAlignment="Top" Width="251" GotFocus="txtPass_GotFocus" Password="xxxxxxx"/>
-            
-            <Button x:Name="btnNormalLogin" Content="Login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,130,0,0" VerticalAlignment="Top" Width="251" Click="btnNormalLogin_Click"/>
-            <Button x:Name="btnLogin" Content="Face recognition login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,155,0,0" VerticalAlignment="Top" Width="251" Click="btnFaceLogin_Click"/>
-            <Button x:Name="btnRegistration" Content="Registration" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,205,0,0" VerticalAlignment="Top" Width="251" Click="btnRegistration_Click"/>
 
-        
-        <Button x:Name="btnSpeakerRecognitionLogin" Content="Speaker recognition login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,180,0,0" VerticalAlignment="Top" Width="251" Click="btnSpeakerRecognitionLogin_Click"/>
+
+            <Grid HorizontalAlignment="Left" Height="166" Margin="20,49,0,0" VerticalAlignment="Top" Width="287"/>
+            <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="28,40,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="251" GotFocus="TextBox_GotFocus"/>
+            <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="28,68,0,0" VerticalAlignment="Top" Width="251" GotFocus="txtPass_GotFocus" Password="xxxxxxx"/>
+
+            <Button x:Name="btnNormalLogin" Content="Login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,119,0,0" VerticalAlignment="Top" Width="251" Click="btnNormalLogin_Click"/>
+            <Button x:Name="btnLogin" Content="Face recognition login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,144,0,0" VerticalAlignment="Top" Width="251" Click="btnFaceLogin_Click"/>
+            <Button x:Name="btnRegistration" Content="Registration" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,195,0,0" VerticalAlignment="Top" Width="251" Click="btnRegistration_Click"/>
+            <TextBox x:Name="_logText" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalScrollBarVisibility="Visible" Margin="28,248,10,10" Visibility="Hidden"/>
+
+            <Button x:Name="btnSpeakerRecognitionLogin" Content="Speaker recognition login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,169,0,0" VerticalAlignment="Top" Width="251" Click="btnSpeakerRecognitionLogin_Click"/>
+            <Label x:Name="lblSpeech" Visibility="Hidden" Content="" HorizontalAlignment="Left" Margin="28,42,0,0" VerticalAlignment="Top" Width="251"/>
+            <Label x:Name="label" Content="Tips: You can use your voice to login" HorizontalAlignment="Left" Margin="28,91,0,0" VerticalAlignment="Top" FontSize="10"/>
         </Grid>
     </Grid>
 </Window>

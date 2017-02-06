@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFLogin"
         mc:Ignorable="d"
-        Title="MainMenu" Height="300" Width="372.238">
+        Title="MainMenu" Height="200.977" Width="476.743">
     <Grid>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top" Height="34" Width="327"/>
-        <Button x:Name="btnLogout" Content="Logout" Background="#D32424" HorizontalAlignment="Left" Margin="27,222,0,0" VerticalAlignment="Top" Width="271" Click="btnLogout_Click"/>
-        <Label x:Name="label1" Content="Set your default house settings" HorizontalAlignment="Left" Margin="27,61,0,0" VerticalAlignment="Top" Width="196"/>
-        <Button x:Name="btnSeePeopleAtHome" Content="Look at the list of people at home" Background="#1cb3bc" HorizontalAlignment="Left" Margin="27,197,0,0" VerticalAlignment="Top" Width="271" Click="btnSeePeopleAtHome_Click" />
+        <Label x:Name="lblTitle" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="54" Width="327"/>
+        <Button x:Name="btnLogout" Content="Logout" Background="#D32424" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="438" Click="btnLogout_Click"/>
+        <Label x:Name="lblResponse" Content="Set your default house settings" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="438"/>
+
+
+        <TextBox x:Name="_logText" Visibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalScrollBarVisibility="Visible" Margin="21,90,26,85"/>
+        <Label x:Name="lblAI" Content="Waiting for your command...." HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="449" Height="29"/>
 
     </Grid>
 </Window>
