@@ -80,7 +80,7 @@ namespace WPFLogin
             db.Users.InsertOnSubmit(regUser);
             db.SubmitChanges();
             MessageBox.Show("Registration successful, please record your voice for speaker recognition login!", "Successful", MessageBoxButton.OK);
-            GC.Collect();
+            //GC.Collect();
             UserRegistrationAudio mw = new UserRegistrationAudio(txtUsername.Text);
             mw.Show();
             this.Close();

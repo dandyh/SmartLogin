@@ -90,7 +90,8 @@ namespace WPFLogin
                 {
                     MessageBox.Show("Login successful", "Login successful", MessageBoxButton.OK);
 
-                    GC.Collect();
+                    //GC.Collect();
+                    this.micClient.EndMicAndRecognition();
                     MainMenu ss = new MainMenu(usr);
                     ss.Show();
                     this.Close();
@@ -105,8 +106,7 @@ namespace WPFLogin
         }
 
         private void btnFaceLogin_Click(object sender, RoutedEventArgs e)
-        {
-
+        {            
             faceLogin();
         }
 
@@ -117,7 +117,8 @@ namespace WPFLogin
                 MessageBox.Show("Please enter your username!", "Error", MessageBoxButton.OK);
                 return false;
             }
-            GC.Collect();
+            //GC.Collect();
+            this.micClient.EndMicAndRecognition();
             LoginWIthFaceRecognition ss = new LoginWIthFaceRecognition(txtUsername.Text);
             ss.Show();
             this.Close();
@@ -126,14 +127,15 @@ namespace WPFLogin
 
         private void register()
         {
-            GC.Collect();
+            //GC.Collect();
+            this.micClient.EndMicAndRecognition();
             UserRegistration ss = new UserRegistration();
             ss.Show();
             this.Close();
         }
 
         private void btnRegistration_Click(object sender, RoutedEventArgs e)
-        {
+        {            
             register();
         }
 
@@ -146,7 +148,7 @@ namespace WPFLogin
         public int counter;
 
         private void btnSpeakerRecognitionLogin_Click(object sender, RoutedEventArgs e)
-        {
+        {            
             speakerLogin();
         }
 
@@ -157,7 +159,8 @@ namespace WPFLogin
                 MessageBox.Show("Please enter your username!", "Error", MessageBoxButton.OK);
                 return false; 
             }
-            GC.Collect();
+            //GC.Collect();
+            this.micClient.EndMicAndRecognition();
             LoginWithSpeakerRecognition ss = new LoginWithSpeakerRecognition(txtUsername.Text);
             ss.Show();
             this.Close();

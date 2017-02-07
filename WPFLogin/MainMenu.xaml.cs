@@ -55,7 +55,8 @@ namespace WPFLogin
 
         private void logout()
         {
-            GC.Collect();
+            //GC.Collect();
+            this.micClient.EndMicAndRecognition();
             MainWindow mw = new MainWindow();
             mw.Show();
             this.Close();
