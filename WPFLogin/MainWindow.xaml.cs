@@ -23,7 +23,7 @@ namespace WPFLogin
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MicrophoneRecognitionClient micClient;
+        //private MicrophoneRecognitionClient micClient;
         //Voice recognition functions
         private string _speechsubscriptionKey = ConfigurationSettings.AppSettings.Get("speechapikey");
         private bool resphonsePhraseFound = false;
@@ -34,8 +34,8 @@ namespace WPFLogin
 
 
             //talk("Welcome to smarter home application");
-            this.CreateMicrophoneRecoClient();
-            this.micClient.StartMicAndRecognition();
+            //this.CreateMicrophoneRecoClient();
+            //this.micClient.StartMicAndRecognition();
             //For testing
             //txtUsername.Text = "dandy";
 
@@ -43,6 +43,17 @@ namespace WPFLogin
             //ss.Show();
             //this.Close();
             //return;
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+
+            //if (null != this.micClient)
+            //{
+            //    this.micClient.Dispose();
+            //}
+
+            //base.OnClosed(e);
         }
 
         private async void talk(string words)
@@ -75,6 +86,13 @@ namespace WPFLogin
 
         }
 
+        private void disposeMic()
+        {
+            //this.micClient.EndMicAndRecognition();
+            //this.micClient.Dispose();
+            //this.micClient = null;
+        }
+
         private void btnNormalLogin_Click(object sender, RoutedEventArgs e)
         {
             if (String.Equals(txtUsername.Text, "Username") || String.Equals(txtUsername.Text.Trim(), ""))
@@ -91,7 +109,8 @@ namespace WPFLogin
                     MessageBox.Show("Login successful", "Login successful", MessageBoxButton.OK);
 
                     //GC.Collect();
-                    this.micClient.EndMicAndRecognition();
+                    disposeMic();
+
                     MainMenu ss = new MainMenu(usr);
                     ss.Show();
                     this.Close();
@@ -118,7 +137,7 @@ namespace WPFLogin
                 return false;
             }
             //GC.Collect();
-            this.micClient.EndMicAndRecognition();
+            disposeMic();
             LoginWIthFaceRecognition ss = new LoginWIthFaceRecognition(txtUsername.Text);
             ss.Show();
             this.Close();
@@ -128,7 +147,7 @@ namespace WPFLogin
         private void register()
         {
             //GC.Collect();
-            this.micClient.EndMicAndRecognition();
+            disposeMic();
             UserRegistration ss = new UserRegistration();
             ss.Show();
             this.Close();
@@ -160,7 +179,7 @@ namespace WPFLogin
                 return false; 
             }
             //GC.Collect();
-            this.micClient.EndMicAndRecognition();
+            disposeMic();
             LoginWithSpeakerRecognition ss = new LoginWithSpeakerRecognition(txtUsername.Text);
             ss.Show();
             this.Close();
@@ -172,18 +191,18 @@ namespace WPFLogin
 
         private void CreateMicrophoneRecoClient()
         {
-            this.micClient = SpeechRecognitionServiceFactory.CreateMicrophoneClient(
-                SpeechRecognitionMode.ShortPhrase,
-                "en-US", _speechsubscriptionKey);
-            this.micClient.AuthenticationUri = "";
+            //this.micClient = SpeechRecognitionServiceFactory.CreateMicrophoneClient(
+            //    SpeechRecognitionMode.ShortPhrase,
+            //    "en-US", _speechsubscriptionKey);
+            //this.micClient.AuthenticationUri = "";
             
             // Event handlers for speech recognition results
-            this.micClient.OnMicrophoneStatus += this.OnMicrophoneStatus;
-            this.micClient.OnPartialResponseReceived += this.OnPartialResponseReceivedHandler;
+            //this.micClient.OnMicrophoneStatus += this.OnMicrophoneStatus;
+            //this.micClient.OnPartialResponseReceived += this.OnPartialResponseReceivedHandler;
 
-            this.micClient.OnResponseReceived += this.OnMicShortPhraseResponseReceivedHandler;
+            //this.micClient.OnResponseReceived += this.OnMicShortPhraseResponseReceivedHandler;
 
-            this.micClient.OnConversationError += this.OnConversationErrorHandler;
+            //this.micClient.OnConversationError += this.OnConversationErrorHandler;
         }
 
         private void OnPartialResponseReceivedHandler(object sender, PartialSpeechResponseEventArgs e)
@@ -235,14 +254,14 @@ namespace WPFLogin
                 // for dataReco, since we already called endAudio() on it as soon as we were done
                 // sending all the data.
 
-                this.micClient.EndMicAndRecognition();
+                //this.micClient.EndMicAndRecognition();
 
                 this.HandleResponseResult(e);
 
                 if (!resphonsePhraseFound)
                 {
-                    CreateMicrophoneRecoClient();
-                    this.micClient.StartMicAndRecognition();
+                    //CreateMicrophoneRecoClient();
+                    //this.micClient.StartMicAndRecognition();
                 }
 
             }));

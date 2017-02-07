@@ -48,6 +48,23 @@ namespace WPFLogin
             startMicRecog();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+
+            if (null != this.micClient)
+            {
+                this.micClient.Dispose();
+            }
+
+            base.OnClosed(e);
+        }
+
+        private void disposeMic()
+        {
+            this.micClient.EndMicAndRecognition();
+            this.micClient.Dispose();
+            this.micClient = null;
+        }
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             logout();
@@ -56,7 +73,7 @@ namespace WPFLogin
         private void logout()
         {
             //GC.Collect();
-            this.micClient.EndMicAndRecognition();
+            disposeMic();
             MainWindow mw = new MainWindow();
             mw.Show();
             this.Close();
