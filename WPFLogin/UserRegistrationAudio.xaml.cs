@@ -168,6 +168,7 @@ namespace WPFLogin
                     user.speakerguid = _speakerId.ToString();
                     user.speakerphrase = txtPhraseText.Text;
                     dataContext.SubmitChanges();
+                    GC.Collect();
                     MainWindow mw = new MainWindow();
                     mw.Show();
                     this.Close();

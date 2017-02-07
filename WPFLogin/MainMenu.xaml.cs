@@ -249,14 +249,14 @@ namespace WPFLogin
                 string temp = Regex.Match(text.ToLower(), @"\d+").Value;
                 if (String.IsNullOrEmpty(temp))
                 {
-                    lblAI.Content = howWarmQuestion;
+                    lblAI.Content = howWarmQuestion;                    
                 }
                 else
                 {
-                    lblAI.Content = "Your default temprature has been set to " + temp + " degrees";
-                    talk(lblAI.Content.ToString());
+                    lblAI.Content = "Your default temprature has been set to " + temp + " degrees. Thank you!";                    
                     isResponded = true;
                 }
+                talk(lblAI.Content.ToString());
 
             }
             else if (text.ToLower().Contains("log") && text.ToLower().Contains("out")) {
@@ -267,8 +267,9 @@ namespace WPFLogin
                 if (!String.IsNullOrEmpty(Regex.Match(text.ToLower(), @"\d+").Value) && String.Equals(howWarmQuestion, lblAI.Content.ToString()))
                 {
                     string temp = Regex.Match(text.ToLower(), @"\d+").Value;
-                    lblAI.Content = "Your default temprature has been set to " + temp + " degrees";
+                    lblAI.Content = "Your default temprature has been set to " + temp + " degrees. Thank you!";
                     isResponded = true;
+                    talk(lblAI.Content.ToString());
                 } else
                 {
                     lblAI.Content = "";
@@ -287,16 +288,19 @@ namespace WPFLogin
             
         }
 
+
+        SpeechSynthesizer synth = null;
         private async void talk(string words)
         {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
+            if (synth != null)
+                synth.Dispose();
 
-            // Configure the audio output. 
+            synth = new SpeechSynthesizer();
+
             synth.SetOutputToDefaultAudioDevice();
 
             // Speak a string synchronously.
             synth.SpeakAsync(words);
-
         }
     }
 }

@@ -18,6 +18,7 @@
             <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="20,316,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="251" GotFocus="txtUsername_GotFocus" Grid.ColumnSpan="2"/>
             <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="20,344,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="251" GotFocus="txtName_GotFocus" Grid.ColumnSpan="2"/>
             <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="20,372,0,0" VerticalAlignment="Top" Width="251" GotFocus="txtPass_GotFocus" Password="xxxxxxx" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtFamilyId" HorizontalAlignment="Left" Height="23" Margin="20,400,0,0" TextWrapping="Wrap" Text="FamilyId" VerticalAlignment="Top" Width="251" Grid.ColumnSpan="2" GotFocus="txtFamilyId_GotFocus"/>
             <Image x:Name="image1" HorizontalAlignment="Left" Margin="20,8,0,221" Width="251" Grid.ColumnSpan="2"/>
             <Label x:Name="lblGender" Content="" HorizontalAlignment="Left" Margin="20,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.137,0.205" Height="26"/>
             <Label x:Name="lblAge" Content="" HorizontalAlignment="Left" Margin="5,232,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.641,1.04" Height="25" Width="78" Grid.Column="1"/>
@@ -26,7 +27,7 @@
             <Button x:Name="btnRedo" Content="Redo" Background="Gray" HorizontalAlignment="Left" Margin="20,282,0,0" VerticalAlignment="Top" Width="251" Click="btnRedo_Click" Grid.ColumnSpan="2"/>
             <Button x:Name="btnRegistration" Content="Register" Background="#1cb3bc" HorizontalAlignment="Left" Margin="20,435,0,0" VerticalAlignment="Top" Width="251" Click="btnRegistration_Click" Grid.ColumnSpan="2"/>
             <Button x:Name="btnBack" Content="Back" Background="Red" HorizontalAlignment="Left" Margin="20,460,0,0" VerticalAlignment="Top" Width="251" Click="btnBack_Click" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="txtFamilyId" HorizontalAlignment="Left" Height="23" Margin="20,400,0,0" TextWrapping="Wrap" Text="FamilyId" VerticalAlignment="Top" Width="251" Grid.ColumnSpan="2" GotFocus="txtFamilyId_GotFocus"/>
+            
             <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="157,234,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25"/>
 
         </Grid>

@@ -126,6 +126,7 @@ namespace WPFLogin
 
         private void register()
         {
+            GC.Collect();
             UserRegistration ss = new UserRegistration();
             ss.Show();
             this.Close();
@@ -300,7 +301,7 @@ namespace WPFLogin
                             goto ends;
                         }
 
-                        if (temp.Contains("register") || temp.Contains("registration"))
+                        if (temp.Contains("sign up") || temp.Contains("register") || temp.Contains("registration"))
                         {
                             register();
                         }
@@ -340,7 +341,7 @@ namespace WPFLogin
                             goto ends;
                         }
 
-                        if (temp.Contains("reg") || temp.Contains("register") || temp.Contains("registration"))
+                        if (temp.Contains("sign up") || temp.Contains("reg") || temp.Contains("register") || temp.Contains("registration"))
                         {
                             register();
                         }
@@ -388,8 +389,8 @@ namespace WPFLogin
             var formattedStr = string.Format(format, args);
             Dispatcher.Invoke(() =>
             {
-                _logText.Text += (formattedStr + "\n");
-                _logText.ScrollToEnd();
+                //_logText.Text += (formattedStr + "\n");
+                //_logText.ScrollToEnd();
             });
         }
     }
