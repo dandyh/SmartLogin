@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Speech.Synthesis;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -43,6 +44,7 @@ namespace WPFLogin
                 lblTitle.Content = "Welcome to the application Mrs. " + user.name;
             }
             lblTitle.Content += "\nWhat can I do for you?";
+            talk(lblTitle.Content.ToString());
             startMicRecog();
         }
 
@@ -94,7 +96,7 @@ namespace WPFLogin
             var formattedStr = string.Format(format, args);
             Dispatcher.Invoke(() =>
             {
-                lblResponse.Content = (formattedStr + "\n");                
+                lblResponse.Content = (formattedStr + "\n");
             });
         
         }
@@ -252,6 +254,7 @@ namespace WPFLogin
                 else
                 {
                     lblAI.Content = "Your default temprature has been set to " + temp + " degrees";
+                    talk(lblAI.Content.ToString());
                     isResponded = true;
                 }
 
@@ -273,10 +276,27 @@ namespace WPFLogin
                 }
             }
 
+            if (isResponded)
+            {
+                string temp = Regex.Match(text.ToLower(), @"\d+").Value;
+                UserTableDataContext dataContext = new UserTableDataContext();
+                User usr = dataContext.Users.SingleOrDefault(x => x.username == user.username);
+                usr.defaulthometemprature = int.Parse(temp);
+                dataContext.SubmitChanges();
+            }
             
+        }
 
-            
-            
+        private async void talk(string words)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output. 
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string synchronously.
+            synth.SpeakAsync(words);
+
         }
     }
 }

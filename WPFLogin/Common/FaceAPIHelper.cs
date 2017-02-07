@@ -63,7 +63,9 @@ namespace WPFLogin.Common
         {
             //Verify
             var res = await faceServiceClient.VerifyAsync(Guid.Parse(faceCollection1[0].FaceId), Guid.Parse(faceCollection2[0].FaceId));
-            return string.Format("Confidence = {0:0.00}, {1}", res.Confidence, 
+            //return string.Format("Confidence = {0:0.00}, {1}", res.Confidence, 
+                //res.IsIdentical ? "Login successful" : "Face is not recognized");
+            return string.Format("{1}", res.Confidence,
                 res.IsIdentical ? "Login successful" : "Face is not recognized");
         }
     }

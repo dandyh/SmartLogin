@@ -20,7 +20,7 @@
             <TextBox x:Name="_logText" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalScrollBarVisibility="Visible" Margin="28,248,10,10" Visibility="Hidden"/>
 
             <Button x:Name="btnSpeakerRecognitionLogin" Content="Speaker recognition login" Background="#1cb3bc" HorizontalAlignment="Left" Margin="28,169,0,0" VerticalAlignment="Top" Width="251" Click="btnSpeakerRecognitionLogin_Click"/>
-            <Label x:Name="lblSpeech" Visibility="Hidden" Content="" HorizontalAlignment="Left" Margin="28,42,0,0" VerticalAlignment="Top" Width="251"/>
+            <Label x:Name="lblSpeech" Content="" HorizontalAlignment="Left" Margin="28,14,0,0" VerticalAlignment="Top" Width="251"/>
             <Label x:Name="label" Content="Tips: You can use your voice to login" HorizontalAlignment="Left" Margin="28,91,0,0" VerticalAlignment="Top" FontSize="10"/>
         </Grid>
     </Grid>

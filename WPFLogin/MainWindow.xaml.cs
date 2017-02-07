@@ -124,11 +124,16 @@ namespace WPFLogin
             return true;
         }
 
-        private void btnRegistration_Click(object sender, RoutedEventArgs e)
+        private void register()
         {
             UserRegistration ss = new UserRegistration();
             ss.Show();
             this.Close();
+        }
+
+        private void btnRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            register();
         }
 
         private void btnTest_Click(object sender, RoutedEventArgs e)
@@ -179,7 +184,8 @@ namespace WPFLogin
 
         private void OnPartialResponseReceivedHandler(object sender, PartialSpeechResponseEventArgs e)
         {
-            this.PartialWriteLine("{0}", e.PartialResult);            
+            //this.PartialWriteLine("{0}", e.PartialResult);
+            this.PartialWriteLine(".", e.PartialResult);
         }
 
         private void PartialWriteLine(string format, params object[] args)
@@ -187,7 +193,7 @@ namespace WPFLogin
             var formattedStr = string.Format(format, args);
             Dispatcher.Invoke(() =>
             {
-                lblSpeech.Content = (formattedStr + "\n");
+                lblSpeech.Content += (formattedStr);
                 
             });
         }
@@ -217,6 +223,8 @@ namespace WPFLogin
         {
             Dispatcher.Invoke((Action)(() =>
             {
+                lblSpeech.Content = "";
+
                 this.WriteLine("--- OnMicShortPhraseResponseReceivedHandler ---");
 
                 // we got the final result, so it we can end the mic reco.  No need to do this
@@ -291,6 +299,11 @@ namespace WPFLogin
                             }
                             goto ends;
                         }
+
+                        if (temp.Contains("register") || temp.Contains("registration"))
+                        {
+                            register();
+                        }
                     }
                 }
 
@@ -314,7 +327,7 @@ namespace WPFLogin
                             goto ends;
                         }
 
-                        if (temp.Contains("speak") || temp.Contains("speech") || temp.Contains("peak"))
+                        if (temp.Contains("speak") || temp.Contains("speech") || temp.Contains("voice") || temp.Contains("peak"))
                         {
                             if (speakerLogin())
                             {
@@ -325,6 +338,11 @@ namespace WPFLogin
                                 txtUsername.Focus();
                             }
                             goto ends;
+                        }
+
+                        if (temp.Contains("reg") || temp.Contains("register") || temp.Contains("registration"))
+                        {
+                            register();
                         }
                     }
                 }
