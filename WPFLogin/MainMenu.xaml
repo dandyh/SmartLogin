@@ -9,7 +9,7 @@
     <Grid>
         <Label x:Name="lblTitle" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="54" Width="327"/>
         <Button x:Name="btnLogout" Content="Logout" Background="#D32424" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="438" Click="btnLogout_Click"/>
-        <Label x:Name="lblResponse" Content="Say: Set my default home temperature to be ... degrees" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="438"/>
+        <Label x:Name="lblResponse" Content="Example: Set my default home temperature to be ??? degrees" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="438"/>
 
 
         <TextBox x:Name="_logText" Visibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalScrollBarVisibility="Visible" Margin="21,90,26,85"/>

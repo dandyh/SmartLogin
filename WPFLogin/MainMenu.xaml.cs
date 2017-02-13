@@ -261,8 +261,9 @@ namespace WPFLogin
         {
             string howWarmQuestion = "How warm do you want your home to be?";
             
-            if ((text.ToLower().Contains("degree") || text.ToLower().Contains("temperature")) &&
-                (text.ToLower().Contains("has") || text.ToLower().Contains("house") || text.ToLower().Contains("home")))
+            if ((text.ToLower().Contains("degree") || text.ToLower().Contains("temperature")) 
+                //(text.ToLower().Contains("has") || text.ToLower().Contains("house") || text.ToLower().Contains("home"))
+                )
             {
                 string temp = Regex.Match(text.ToLower(), @"\d+").Value;
                 if (String.IsNullOrEmpty(temp))

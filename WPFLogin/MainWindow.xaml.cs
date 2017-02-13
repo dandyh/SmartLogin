@@ -86,12 +86,12 @@ namespace WPFLogin
 
         }
 
-        private void disposeMic()
-        {
+        //private void disposeMic()
+        //{
             //this.micClient.EndMicAndRecognition();
             //this.micClient.Dispose();
             //this.micClient = null;
-        }
+        //}
 
         private void btnNormalLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -107,9 +107,9 @@ namespace WPFLogin
                 if (usr != null)
                 {
                     MessageBox.Show("Login successful", "Login successful", MessageBoxButton.OK);
-
+                    txtUsername.Focus();
                     //GC.Collect();
-                    disposeMic();
+                    //disposeMic();
 
                     MainMenu ss = new MainMenu(usr);
                     ss.Show();
@@ -134,10 +134,11 @@ namespace WPFLogin
             if (String.Equals(txtUsername.Text, "Username") || String.Equals(txtUsername.Text.Trim(), ""))
             {
                 MessageBox.Show("Please enter your username!", "Error", MessageBoxButton.OK);
+                txtUsername.Focus();
                 return false;
             }
             //GC.Collect();
-            disposeMic();
+            //disposeMic();
             LoginWIthFaceRecognition ss = new LoginWIthFaceRecognition(txtUsername.Text);
             ss.Show();
             this.Close();
@@ -147,7 +148,7 @@ namespace WPFLogin
         private void register()
         {
             //GC.Collect();
-            disposeMic();
+            //disposeMic();
             UserRegistration ss = new UserRegistration();
             ss.Show();
             this.Close();
@@ -176,10 +177,11 @@ namespace WPFLogin
             if (String.Equals(txtUsername.Text, "Username") || String.Equals(txtUsername.Text.Trim(), ""))
             {
                 MessageBox.Show("Please enter your username!", "Error", MessageBoxButton.OK);
+                txtUsername.Focus();
                 return false; 
             }
             //GC.Collect();
-            disposeMic();
+            //disposeMic();
             LoginWithSpeakerRecognition ss = new LoginWithSpeakerRecognition(txtUsername.Text);
             ss.Show();
             this.Close();

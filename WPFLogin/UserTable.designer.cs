@@ -100,6 +100,8 @@ namespace WPFLogin
 		
 		private System.Nullable<int> _defaulthometemprature;
 		
+		private string _faceguid;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -124,6 +126,8 @@ namespace WPFLogin
     partial void OnfamilyidChanged();
     partial void OndefaulthometempratureChanging(System.Nullable<int> value);
     partial void OndefaulthometempratureChanged();
+    partial void OnfaceguidChanging(string value);
+    partial void OnfaceguidChanged();
     #endregion
 		
 		public User()
@@ -327,6 +331,26 @@ namespace WPFLogin
 					this._defaulthometemprature = value;
 					this.SendPropertyChanged("defaulthometemprature");
 					this.OndefaulthometempratureChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_faceguid", DbType="VarChar(50)")]
+		public string faceguid
+		{
+			get
+			{
+				return this._faceguid;
+			}
+			set
+			{
+				if ((this._faceguid != value))
+				{
+					this.OnfaceguidChanging(value);
+					this.SendPropertyChanging();
+					this._faceguid = value;
+					this.SendPropertyChanged("faceguid");
+					this.OnfaceguidChanged();
 				}
 			}
 		}

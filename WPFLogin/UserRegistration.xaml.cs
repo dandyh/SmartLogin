@@ -178,7 +178,7 @@ namespace WPFLogin
                             });
                             lblGender.Content = "Gender: " + face.FaceAttributes.Gender;
                             regUser.gender = face.FaceAttributes.Gender;
-
+                            regUser.faceguid = face.FaceId.ToString();
                             txtAge.Text = string.Format("{0:#}", face.FaceAttributes.Age);
                             lblAge.Content = "years old";                            
                             if (!String.Equals(face.FaceAttributes.Glasses.ToString(),"NoGlasses"))
@@ -225,7 +225,10 @@ namespace WPFLogin
                     else
                     {                        
                         if(faceRects.Length > 1)
-                            MessageBox.Show("More than 1 photo detected, please capture another photo!", "Error", MessageBoxButton.OK);
+                        {
+                            MessageBox.Show("More than 1 face detected, please capture another photo!", "Error", MessageBoxButton.OK);
+                            return;
+                        }
                         else
                             MessageBox.Show("Face is not detected, please capture another photo!", "Error", MessageBoxButton.OK);
                         webcam.Start();
