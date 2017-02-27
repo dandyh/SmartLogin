@@ -22,7 +22,7 @@ namespace WPFLogin
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dandy-application-db")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SmarterHomeDB")]
 	public partial class UserTableDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,7 +36,7 @@ namespace WPFLogin
     #endregion
 		
 		public UserTableDataContext() : 
-				base(global::WPFLogin.Properties.Settings.Default.dandy_application_dbConnectionString, mappingSource)
+				base(global::WPFLogin.Properties.Settings.Default.SmarterHomeDBConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

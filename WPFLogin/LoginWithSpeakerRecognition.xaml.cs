@@ -136,7 +136,7 @@ namespace WPFLogin
                     MessageBox.Show("Login successful, with confidence: " + response.Confidence.ToString(), "Successful", MessageBoxButton.OK);
                     lblStatus.Content = "Verification successful";
 
-                    MainMenu ss = new MainMenu(user);
+                    MainMenuWIthLights ss = new MainMenuWIthLights(user);
                     ss.Show();
                     this.Close();
                     return;

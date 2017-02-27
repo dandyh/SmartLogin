@@ -105,7 +105,7 @@ namespace WPFLogin
                     MessageBox.Show(res, "Successful", MessageBoxButton.OK);
                     webcam.Stop();
 
-                    MainMenu ss = new MainMenu(usr);
+                    MainMenuWIthLights ss = new MainMenuWIthLights(usr);
                     ss.Show();
                     this.Close();
                     return;

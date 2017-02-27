@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dandy-application-db" Class="UserTableDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=dandy-server.database.windows.net;Initial Catalog=dandy-application-db;Persist Security Info=True;User ID=dandy" SettingsObjectName="WPFLogin.Properties.Settings" SettingsPropertyName="dandy_application_dbConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SmarterHomeDB" Class="UserTableDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=smarterhomedb.database.windows.net;Initial Catalog=SmarterHomeDB;User ID=dandy" SettingsObjectName="WPFLogin.Properties.Settings" SettingsPropertyName="SmarterHomeDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.[User]" Member="Users">
     <Type Name="User">
       <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

@@ -111,7 +111,7 @@ namespace WPFLogin
                     //GC.Collect();
                     //disposeMic();
 
-                    MainMenu ss = new MainMenu(usr);
+                    MainMenuWIthLights ss = new MainMenuWIthLights(usr);
                     ss.Show();
                     this.Close();
                     return;
